@@ -1,0 +1,22 @@
+{
+  "name": "oracle-layers-serverless",
+  "version": "1.0.0",
+  "description": "Sample node oracledb lambda layers example with serverless framework",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmdd/node-oracle-layers-serverless.git"
+  },
+  "author": "Jimmdd@github.com/jimmdd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimmdd/node-oracle-layers-serverless/issues"
+  },
+  "homepage": "https://github.com/jimmdd/node-oracle-layers-serverless#readme",
+  "devDependencies": {
+    "oracledb": "^3.1.2"
+  }
+}
