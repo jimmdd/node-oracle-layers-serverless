@@ -1,0 +1,75 @@
+# node-oracledb version 3.1
+
+The node-oracledb add-on for Node.js powers high performance Oracle
+Database applications.
+
+Use node-oracledb to connect Node.js 6, 8, 10 and 11 to Oracle Database.
+
+Node-oracledb supports basic and advanced features of Oracle Database
+and Oracle Client.  See the
+[homepage][4] for a list.
+
+The node-oracledb module is open source and maintained by Oracle Corp.
+It is stable, well documented, and has a comprehensive test suite.
+
+## <a name="installation"></a> Installation
+
+See [Getting Started with Node-oracledb][1] and [Quick Start Node-oracledb Installation][2].
+
+## <a name="doc"></a> Documentation
+
+See [Documentation for the Oracle Database Node.js Add-on][32] and the [CHANGELOG][33].
+
+## <a name="examples"></a> Examples
+
+See the [examples][30] directory.  Start with
+[examples/example.js][31].
+
+## <a name="help"></a> Help
+
+Issues and questions about node-oracledb can be posted on [GitHub][3] or
+[Slack][5] ([link to join Slack][6]).
+
+## <a name="testing"></a> Tests
+
+To run the test suite see [test/README][34].
+
+## <a name="contrib"></a> Contributing
+
+Node-oracledb is an open source project. See [CONTRIBUTING][35] for
+details.
+
+Oracle gratefully acknowledges the contributions to node-oracledb that
+have been made by the community.
+
+## <a name="license"></a> License
+
+Copyright (c) 2015, 2018, Oracle and/or its affiliates. All rights reserved.
+
+You may not use the identified files except in compliance with the Apache
+License, Version 2.0 (the "License.")
+
+You may obtain a copy of the License at
+[http://www.apache.org/licenses/LICENSE-2.0][36].  Unless required by
+applicable law or agreed to in writing, software distributed under the
+License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied.
+
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
+
+[1]: https://oracle.github.io/node-oracledb/doc/api.html#getstarted
+[2]: https://oracle.github.io/node-oracledb/INSTALL.html#quickstart
+[3]: https://github.com/oracle/node-oracledb/issues
+[4]: https://oracle.github.io/node-oracledb
+[5]: https://node-oracledb.slack.com/
+[6]: https://node-oracledb.slack.com/join/shared_invite/enQtNDU4Mjc2NzM5OTA2LTdkMzczODY3OGY3MGI0Yjk3NmQ4NDU4MTI2OGVjNTYzMjE5OGY5YzVkNDY4MWNkNjFiMDM2ZDMwOWRjNWVhNTg
+[30]: https://github.com/oracle/node-oracledb/blob/master/examples
+[31]: https://github.com/oracle/node-oracledb/blob/master/examples/example.js#L32
+[32]: https://oracle.github.io/node-oracledb/doc/api.html
+[33]: https://github.com/oracle/node-oracledb/blob/master/CHANGELOG.md
+[34]: https://github.com/oracle/node-oracledb/blob/master/test/README.md
+[35]: https://github.com/oracle/node-oracledb/blob/master/CONTRIBUTING.md
+[36]: http://www.apache.org/licenses/LICENSE-2.0

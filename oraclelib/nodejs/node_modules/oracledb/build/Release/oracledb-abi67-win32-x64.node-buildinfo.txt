@@ -1,0 +1,1 @@
+oracledb-abi67-win32-x64.node v11.10.0 e70199aedd8542402cb2c5f8d75c2f8aa621df76 5768d8f93ef9ba42e8d4a6d701ace16504debc90 Wed, 20 Feb 2019 05:37:10 GMT
