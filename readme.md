@@ -4,6 +4,10 @@ It has precompiled oracle instant client library 12.1 for lambda.
 You will need to modify handler.js to add your db creds to make it work.
 The sample lambda has a test connection code that will help you test your connection once you correctly configured connection info.
 
+To use this template, click the green `Use this template` button next to clone or download.
+
+To initalize the code, please run `npm install` once you created your project using this template. 
+
 If you wish to run this project locally, you have to install oracle instant client 12.1 correctly on your local machine and put node-oracle as dev dependency. Please refer to the official oracle client installation guide here: https://oracle.github.io/node-oracledb/INSTALL.html#quickstart
 
 [Update 08/12/2019]:
