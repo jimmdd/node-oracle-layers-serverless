@@ -1,0 +1,23 @@
+{
+    "plugins": [
+        [
+            "transform-runtime",
+            {
+                "helpers": false,
+                "polyfill": true,
+                "regenerator": true,
+                "moduleName": "babel-runtime"
+            }
+        ]
+    ],
+    "presets": [
+        [
+            "env",
+            {
+                "targets": {
+                    "node": "8.10"
+                }
+            }
+        ]
+    ]
+}

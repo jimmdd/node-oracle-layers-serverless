@@ -21,6 +21,9 @@ provider:
   name: aws
   runtime: nodejs8.10
 
+plugins:
+  - serverless-offline
+  - serverless-webpack 
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
@@ -67,6 +70,10 @@ layers:
 functions:
   hello:
     handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: post
     layers:
       - {Ref: oraclelibLambdaLayer}
 #    The following are a few example events you can configure
