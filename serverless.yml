@@ -25,6 +25,38 @@ provider:
 #  stage: dev
 #  region: us-east-1
 
+plugins:
+  - serverless-offline
+  - serverless-webpack 
+
+layers:
+  oraclelib:
+    path: oraclelib # required, path to layer contents on disk
+    # name: ${self:provider.stage}-layerName # optional, Deployed Lambda layer name
+    # description: Description of what the lambda layer does # optional, Description to publish to AWS
+    # compatibleRuntimes: # optional, a list of runtimes this layer is compatible with
+    #   - nodejs8.10
+    # licenseInfo: GPLv3 # optional, a string specifying license information
+    # allowedAccounts: # optional, a list of AWS account IDs allowed to access this layer. * means public accessable
+    #   - '*'
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules:  # enable auto-packing of external modules
+      forceExclude:
+        - oracledb  #force exclude the oracledb as we have already include it in our layer
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: post
+    layers:
+      - {Ref: OraclelibLambdaLayer} # This is the name Cloudformation required, including capital first letter of your declared layers name plus hardcoded 'LambdaLayer', You will have to name this way.
+
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
 #    - Effect: "Allow"
@@ -53,22 +85,6 @@ provider:
 #  exclude:
 #    - exclude-me.js
 #    - exclude-me-dir/**
-layers:
-  oraclelib:
-    path: oraclelib # required, path to layer contents on disk
-    # name: ${self:provider.stage}-layerName # optional, Deployed Lambda layer name
-    # description: Description of what the lambda layer does # optional, Description to publish to AWS
-    # compatibleRuntimes: # optional, a list of runtimes this layer is compatible with
-    #   - nodejs8.10
-    # licenseInfo: GPLv3 # optional, a string specifying license information
-    # allowedAccounts: # optional, a list of AWS account IDs allowed to access this layer. * means public accessable
-    #   - '*'
-
-functions:
-  hello:
-    handler: handler.hello
-    layers:
-      - {Ref: OraclelibLambdaLayer}
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

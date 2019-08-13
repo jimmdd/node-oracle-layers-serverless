@@ -17,6 +17,19 @@
   },
   "homepage": "https://github.com/jimmdd/node-oracle-layers-serverless#readme",
   "devDependencies": {
-    "oracledb": "^3.1.2"
+    "aws-sdk": "^2.439.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "oracledb": "^3.1.2",
+    "serverless-aws-documentation": "^1.1.0",
+    "serverless-offline": "^4.10.6",
+    "serverless-webpack": "^5.3.1",
+    "webpack": "^4.16.2",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
   }
 }

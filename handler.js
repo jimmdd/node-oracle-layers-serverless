@@ -1,50 +1,41 @@
 'use strict';
-
 module.exports.hello = async (event) => {
-  var oracledb = require('oracledb');
+  const oracledb = require('oracledb');
   // var dbConfig = require('./dbconfig.js');// Replace this to your own
-
-  await oracledb.getConnection(
-    {
-      user: dbConfig.user, // Replace this to your own
-      password: dbConfig.password,// Replace this to your own
-      connectString: dbConfig.connectString// Replace this to your own
-    },
-    function (err, connection) {
-      if (err) {
-        console.error(err.message);
-        return {
-          statusCode: 500,
-          body: JSON.stringify({
-            message: error.message,
-            input: event,
-          }),
-        };
+  let connection;
+  try {
+    connection = await oracledb.getConnection(
+      {
+        user: dbConfig.user, // Replace this to your own
+        password: dbConfig.password,// Replace this to your own
+        connectString: dbConfig.connectString// Replace this to your own
+      });
+    console.log('connection', connection);
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        message: 'successfully connected',
+      }),
+    };
+  }
+  catch (e) {
+    console.log('connection error', e)
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        message: 'Failed to connnect!',
+        error: e,
+        input: event,
+      }),
+    };
+  }
+  finally {
+    if (connection) {
+      try {
+        await connection.close();
+      } catch (err) {
+        console.error(err);
       }
-      console.log('Connection was successful!');
-      connection.close(
-        function (err) {
-          if (err) {
-            console.error(err.message);
-            return {
-              statusCode: 500,
-              body: JSON.stringify({
-                message: error.message,
-                input: event,
-              }),
-            };
-          }
-        });
-    });
-
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: 'Your function executed successfully!',
-      input: event,
-    }),
-  };
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
+    }
+  }
 };
