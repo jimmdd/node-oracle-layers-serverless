@@ -19,7 +19,7 @@ service: node-oracle-layers # NOTE: update this with your service name
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
 
 # you can overwrite defaults here
 #  stage: dev
@@ -27,7 +27,7 @@ provider:
 
 plugins:
   - serverless-offline
-  - serverless-webpack 
+  - serverless-webpack
 
 layers:
   oraclelib:
@@ -43,9 +43,9 @@ layers:
 custom:
   webpack:
     webpackConfig: ./webpack.config.js
-    includeModules:  # enable auto-packing of external modules
+    includeModules: # enable auto-packing of external modules
       forceExclude:
-        - oracledb  #force exclude the oracledb as we have already include it in our layer
+        - oracledb #force exclude the oracledb as we have already include it in our layer
 
 functions:
   hello:
@@ -55,7 +55,7 @@ functions:
           path: hello
           method: post
     layers:
-      - {Ref: OraclelibLambdaLayer} # This is the name Cloudformation required, including capital first letter of your declared layers name plus hardcoded 'LambdaLayer', You will have to name this way.
+      - { Ref: OraclelibLambdaLayer } # This is the name Cloudformation required, including capital first letter of your declared layers name plus hardcoded 'LambdaLayer', You will have to name this way.
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
