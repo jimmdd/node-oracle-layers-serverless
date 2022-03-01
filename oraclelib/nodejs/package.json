@@ -1,0 +1,13 @@
+{
+  "name": "oracle-layers-serverless",
+  "version": "1.0.0",
+  "description": "Sample node oracledb lambda layers example with serverless framework",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Colton Dick",
+  "dependencies": {
+    "oracledb": "^5.3.0"
+  }
+}

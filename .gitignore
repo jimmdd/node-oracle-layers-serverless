@@ -1,7 +1,9 @@
 # package directories
-node_modules
+**node_modules
 jspm_packages
 
 # Serverless directories
 .serverless
-.webpack
+
+# Misc directories
+.vscode
