@@ -8,7 +8,7 @@ You will need to modify serverless.yml to add your database credentials to make 
 
 The sample lambda has a test connection code that will help you test your connection once you correctly configured connection info.
 
-To initalize the code, please run `npm install` once you created your project using this template.
+To initialize the code, please run `npm install` once you created your project using this template.
 
 Additionally, you will need to run the following to install the node dependencies inside of the oracle library lambda layer:
 
@@ -21,4 +21,4 @@ npm install
 If you wish to run this project locally, you have to install oracle instant client 19 correctly on your local machine and put node-oracle as dev dependency. Please refer to the official oracle client installation guide here: https://oracle.github.io/node-oracledb/INSTALL.html#quickstart
 
 **[Update 03/01/2022]:**
-Updated nodejs version to 14.x as AWS no longer supports 10.x and added the appropraite dependencies for the oracle instant client 19.
+Updated nodejs version to 14.x as AWS no longer supports 10.x and added the appropriate dependencies for the oracle instant client 19.
